@@ -1,5 +1,0 @@
-Cannot execute '/Users/jonbell/.passenger/standalone/3.0.7-x86_64-ruby1.9.2-macosx-10.6/support/helper-scripts/prespawn http://0.0.0.0:3000': Permission denied (13)
-2011/07/19 15:19:07 [error] 17225#0: *4 "/Users/jonbell/Documents/workspace/bracket/public/index.html" is not found (2: No such file or directory), client: 127.0.0.1, server: _, request: "GET / HTTP/1.1", host: "localhost:3000"
-2011/07/19 15:19:07 [error] 17225#0: *4 open() "/Users/jonbell/Documents/workspace/bracket/public/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: _, request: "GET /favicon.ico HTTP/1.1", host: "localhost:3000"
-2011/07/19 15:19:07 [error] 17225#0: *4 open() "/Users/jonbell/Documents/workspace/bracket/public/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: _, request: "GET /favicon.ico HTTP/1.1", host: "localhost:3000"
-2011/07/19 15:19:27 [error] 17225#0: *4 "/Users/jonbell/Documents/workspace/bracket/public/index.html" is not found (2: No such file or directory), client: 127.0.0.1, server: _, request: "GET / HTTP/1.1", host: "localhost:3000"

@@ -1,0 +1,21 @@
+<h1>Listing tournament_brackets</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tournament_brackets.each do |tournament_bracket| %>
+  <tr>
+    <td><%= link_to 'Show', tournament_bracket %></td>
+    <td><%= link_to 'Edit', edit_tournament_bracket_path(tournament_bracket) %></td>
+    <td><%= link_to 'Destroy', tournament_bracket, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tournament bracket', new_tournament_bracket_path %>

@@ -1,6 +1,15 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.9'
+gem 'thin'
+
+group :development do
+  gem 'mysql'
+end
+
+group :production do
+  gem 'pg'
+end
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

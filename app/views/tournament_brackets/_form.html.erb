@@ -1,0 +1,17 @@
+<%= form_for(@tournament_bracket) do |f| %>
+  <% if @tournament_bracket.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tournament_bracket.errors.count, "error") %> prohibited this tournament_bracket from being saved:</h2>
+
+      <ul>
+      <% @tournament_bracket.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
