@@ -1,0 +1,23 @@
+%h3 Tournament Definitions
+= link_to "New Tournament Definition", new_admin_tournament_definition_url
+- if @tournament_definitions.empty?
+  %p No tournament definitions defined.
+- else
+  %table.tournament_definitions
+    %thead
+      %tr
+        %th Name
+        %th # Contestants
+        %th Quorum
+        %th # Criteria
+        %th Actions
+    %tbody
+      - @tournament_definitions.each do |definition|
+        %tr.tournament_definition
+          %td
+            = link_to definition.name, admin_tournament_definition_path(definition)
+          %td= definition.number_of_contestants
+          %td= definition.quorum
+          %td= definition.score_criteria.count
+          %td.actions
+            = link_to "DELETE", admin_tournament_definition_path(definition), :confirm => "Are you sure you want to delete this definition?", :method => :delete

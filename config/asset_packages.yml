@@ -1,0 +1,12 @@
+--- 
+javascripts: 
+- base: 
+  - jquery
+  - jquery-ui
+  - jquery_ujs
+  - application
+- admin: 
+  - tournament_definitions
+stylesheets: 
+- base: 
+  - scaffold

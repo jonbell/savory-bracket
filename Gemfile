@@ -2,6 +2,11 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.9'
 gem 'thin'
+gem 'inherited_resources', "~> 1.2.2"
+gem "haml", "~> 3.1.2"
+gem "jquery-rails", "~> 1.0.12"
+gem "formtastic", "~> 1.2.4"
+gem "friendly_id", "~> 3.2.1.1"
 
 group :development do
   gem 'mysql'

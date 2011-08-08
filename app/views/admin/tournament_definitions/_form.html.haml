@@ -1,0 +1,39 @@
+%h3.title New Tournament Definition
+= semantic_form_for [:admin, @tournament_definition] do |form|
+  = form.inputs do
+    = form.input :name
+    = form.input :number_of_contestants, :required => true
+    = form.input :quorum, :required => true
+  #criteria
+    %h4 Criteria
+    %input#add_criteria{:type => :button, :value => "Add new criterium"}
+    = form.inputs :for => :score_criteria do |c|
+      = c.input :name
+      = c.input :weight, :required => true
+      %li.delete
+        %a.delete_criteria{:href => '#'} Remove Criteria
+  = form.buttons do
+    = form.commit_button
+    %li.cancel
+      = cancel_link
+#criteria_dup{:style => 'display: none;'}
+  %fieldset.inputs.new
+    %ol
+      %li.string.required{:id => 'tournament_definition_score_criteria_attributes_%i_name_input'}
+        %label{:for => "tournament_definition_score_criteria_attributes_%i_name"}
+          Name
+          %abbr{:title => :required} *
+        %input{:type => 'text', 
+          :maxlength => 255, 
+          :id => 'tournament_definition_score_criteria_attributes_%i_name', 
+          :name => 'tournament_definition[score_criteria_attributes][%i][name]'}
+      %li.numeric.required{:id => 'tournament_definition_score_criteria_attributes_%i_weight_input'}
+        %label{:for => "tournament_definition_score_criteria_attributes_%i_weight"}
+          Weight
+          %abbr{:title => :required} *
+        %input{:type => 'text', 
+          :maxlength => 255, 
+          :id => 'tournament_definition_score_criteria_attributes_%i_weight', 
+          :name => 'tournament_definition[score_criteria_attributes][%i][weight]'}
+      %li.delete
+        %a.delete_criteria{:href => '#'} Remove Criteria

@@ -1,0 +1,11 @@
+!!! 5
+%html
+  %head
+    %title Bracket Admin
+    != stylesheet_link_merged :base
+    != javascript_include_merged :base, :admin
+    != csrf_meta_tag
+  %body
+
+    = yield
+

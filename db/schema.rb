@@ -10,10 +10,30 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110720042325) do
+ActiveRecord::Schema.define(:version => 20110807212154) do
 
-  create_table "foos", :force => true do |t|
-    t.string   "foo"
+  create_table "score_criteria", :force => true do |t|
+    t.integer "tournament_definition_id", :null => false
+    t.string  "name",                     :null => false
+    t.float   "weight",                   :null => false
+  end
+
+  create_table "slugs", :force => true do |t|
+    t.string   "name"
+    t.integer  "sluggable_id"
+    t.integer  "sequence",                     :default => 1, :null => false
+    t.string   "sluggable_type", :limit => 40
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "slugs", ["name", "sluggable_type", "sequence", "scope"], :name => "index_slugs_on_n_s_s_and_s", :unique => true
+  add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
+
+  create_table "tournament_definitions", :force => true do |t|
+    t.string   "name",                  :null => false
+    t.integer  "number_of_contestants", :null => false
+    t.integer  "quorum",                :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
